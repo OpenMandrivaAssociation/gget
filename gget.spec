@@ -1,0 +1,53 @@
+Summary:	Download Manager for the GNOME
+Name:     	gget
+Version:	0.0.2
+Release:	%mkrel 1
+License:	GPLv2+
+Group:		Graphical desktop/GNOME
+Source0: 	http://ftp.gnome.org/pub/GNOME/sources/%name/0.0/%name-%version.tar.bz2
+URL:		http://live.gnome.org/GGet
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
+%py_requires -d
+BuildRequires:	gnome-python-extras
+BuildRequires:	gnome-python-devel
+BuildRequires:	python-dbus
+BuildRequires:	python-notify
+BuildRequires:	pygtk2.0-devel
+BuildRequires:	epiphany-devel
+BuildRequires:	intltool
+
+Requires:	gnome-python-extras
+Requires:	python-dbus
+Requires:	python-notify
+Requires:	epiphany
+
+%description
+GGet is the name of an upcoming Download Manager for the GNOME desktop.
+
+%prep
+%setup -q
+
+%build
+%configure2_5x --disable-schemas-install
+%make
+
+%install
+rm -rf $RPM_BUILD_ROOT
+%makeinstall_std
+
+%{find_lang} %{name}
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files -f %{name}.lang
+%defattr(-, root, root)
+%doc AUTHORS NEWS TODO
+%{_sysconfdir}/gconf/schemas/gget.schemas
+%{_bindir}/%name
+%{_datadir}/%name
+%{_datadir}/applications/*.desktop
+%{_datadir}/dbus-1/services/org.gnome.gget.service
+%{_iconsdir}/hicolor/*/*/*
+%{python_sitelib}/%name
+%{_libdir}/epiphany/*/extensions/gget*
