@@ -1,9 +1,14 @@
+%define epiphany_ver %(rpm -q --whatprovides epiphany-devel --queryformat "%{VERSION}")
+%define epiphany_minor %(echo %epiphany_ver | awk -F. '{print $2}')
+%define epiphany_major 2.%epiphany_minor
+%define epiphany_next_major %(echo 2.$((%epiphany_minor+1)))
+
 Summary:	Download Manager for the GNOME
 Name:     	gget
 Version:	0.0.2
 Release:	%mkrel 1
 License:	GPLv2+
-Group:		Graphical desktop/GNOME
+Group:		Networking/File transfer
 Source0: 	http://ftp.gnome.org/pub/GNOME/sources/%name/0.0/%name-%version.tar.bz2
 URL:		http://live.gnome.org/GGet
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
@@ -19,10 +24,21 @@ BuildRequires:	intltool
 Requires:	gnome-python-extras
 Requires:	python-dbus
 Requires:	python-notify
-Requires:	epiphany
 
 %description
 GGet is the name of an upcoming Download Manager for the GNOME desktop.
+
+%package -n epiphany-%name
+Summary:	Epiphany extension, using gget as downloader
+Group: 		Networking/File transfer
+Requires:	%name = %{version}
+Requires:	epiphany >= %epiphany_major
+Requires:	epipahny < %epiphany_next_major
+
+%description -n epiphany-%name
+GGet is the name of an upcoming Download Manager for the GNOME desktop.
+
+This package contains epiphany extesion of gget.
 
 %prep
 %setup -q
@@ -68,4 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/services/org.gnome.gget.service
 %{_iconsdir}/hicolor/*/*/*
 %{python_sitelib}/%name
+
+%files -n epiphany-%name
+%defattr(-, root, root)
 %{_libdir}/epiphany/*/extensions/gget*
