@@ -6,7 +6,7 @@
 Summary:	Download Manager for the GNOME
 Name:     	gget
 Version:	0.0.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		Networking/File transfer
 Source0: 	http://ftp.gnome.org/pub/GNOME/sources/%name/0.0/%name-%version.tar.bz2
@@ -33,7 +33,7 @@ Summary:	Epiphany extension, using gget as downloader
 Group: 		Networking/File transfer
 Requires:	%name = %{version}
 Requires:	epiphany >= %epiphany_major
-Requires:	epipahny < %epiphany_next_major
+Requires:	epiphany < %epiphany_next_major
 
 %description -n epiphany-%name
 GGet is the name of an upcoming Download Manager for the GNOME desktop.
