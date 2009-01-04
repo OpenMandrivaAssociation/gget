@@ -5,12 +5,11 @@
 
 Summary:	Download Manager for the GNOME
 Name:     	gget
-Version:	0.0.2
-Release:	%mkrel 4
+Version:	0.0.4
+Release:	%mkrel 1
 License:	GPLv2+
 Group:		Networking/File transfer
 Source0: 	http://ftp.gnome.org/pub/GNOME/sources/%name/0.0/%name-%version.tar.bz2
-Patch0:		gget-0.0.2-supportepiphany-2.24.patch
 URL:		http://live.gnome.org/GGet
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 %py_requires -d
@@ -43,7 +42,6 @@ This package contains epiphany extesion of gget.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
 %configure2_5x --disable-schemas-install
