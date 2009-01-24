@@ -6,10 +6,11 @@
 Summary:	Download Manager for the GNOME
 Name:     	gget
 Version:	0.0.4
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	GPLv2+
 Group:		Networking/File transfer
 Source0: 	http://ftp.gnome.org/pub/GNOME/sources/%name/0.0/%name-%version.tar.bz2
+Patch0:		gget-0.0.4-epiphany-2.26.patch
 URL:		http://live.gnome.org/GGet
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 %py_requires -d
@@ -20,6 +21,7 @@ BuildRequires:	python-notify
 BuildRequires:	pygtk2.0-devel
 BuildRequires:	epiphany-devel
 BuildRequires:	intltool
+BuildRequires:	gnome-common
 
 Requires:	gnome-python-extras
 Requires:	python-dbus
@@ -42,8 +44,10 @@ This package contains epiphany extesion of gget.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
+gnome-autogen.sh
 %configure2_5x --disable-schemas-install
 %make
 
