@@ -6,7 +6,7 @@
 Summary:	Download Manager for the GNOME
 Name:     	gget
 Version:	0.0.4
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv2+
 Group:		Networking/File transfer
 Source0: 	http://ftp.gnome.org/pub/GNOME/sources/%name/0.0/%name-%version.tar.bz2
