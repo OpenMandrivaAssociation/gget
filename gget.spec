@@ -6,7 +6,7 @@
 Summary:	Download Manager for the GNOME
 Name:     	gget
 Version:	0.0.4
-Release:	%mkrel 7
+Release:	%mkrel 8
 License:	GPLv2+
 Group:		Networking/File transfer
 Source0: 	http://ftp.gnome.org/pub/GNOME/sources/%name/0.0/%name-%version.tar.bz2
@@ -94,6 +94,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/*/*/*
 %{python_sitelib}/%name
 
+%if 0
 %files -n epiphany-%name
 %defattr(-, root, root)
 %{_libdir}/epiphany/*/extensions/gget*
+%endif
