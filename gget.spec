@@ -14,7 +14,7 @@ Patch0:		gget-0.0.4-epiphany-2.28.patch
 Patch1:		gget-0.0.4-pythonver.patch
 URL:		http://live.gnome.org/GGet
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
-%py_requires -d
+BuildRequires:	python-devel
 BuildRequires:	gnome-python-extras
 BuildRequires:	gnome-python-devel
 BuildRequires:	python-dbus
@@ -23,6 +23,7 @@ BuildRequires:	pygtk2.0-devel
 BuildRequires:	epiphany-devel
 BuildRequires:	intltool
 BuildRequires:	gnome-common
+BuildRequires:	libGConf2-devel
 
 Requires:	gnome-python-extras
 Requires:	gnome-python-gconf
