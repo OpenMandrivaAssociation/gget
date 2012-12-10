@@ -100,3 +100,63 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-, root, root)
 %{_libdir}/epiphany/*/extensions/gget*
 %endif
+
+
+%changelog
+* Mon May 23 2011 Funda Wang <fwang@mandriva.org> 0.0.4-10mdv2011.0
++ Revision: 677731
+- br gconf
+- rebuild to add gconftool as req
+
+* Sat Nov 06 2010 Funda Wang <fwang@mandriva.org> 0.0.4-9mdv2011.0
++ Revision: 593871
+- rebuild for py2.
+
+* Tue Sep 22 2009 Götz Waschk <waschk@mandriva.org> 0.0.4-8mdv2010.1
++ Revision: 447062
+- disable epiphany extension
+
+* Fri Jun 12 2009 Götz Waschk <waschk@mandriva.org> 0.0.4-7mdv2010.0
++ Revision: 385430
+- add more missing deps
+
+* Fri Jun 12 2009 Götz Waschk <waschk@mandriva.org> 0.0.4-6mdv2010.0
++ Revision: 385390
+- fix python version
+- fix deps
+
+* Mon May 11 2009 Götz Waschk <waschk@mandriva.org> 0.0.4-5mdv2010.0
++ Revision: 374766
+- update patch for new epiphany
+
+* Sun Mar 15 2009 Götz Waschk <waschk@mandriva.org> 0.0.4-4mdv2009.1
++ Revision: 355508
+- rebuild for new epiphany
+
+* Sat Jan 24 2009 Götz Waschk <waschk@mandriva.org> 0.0.4-3mdv2009.1
++ Revision: 333258
+- rebuild for new epiphany
+
+  + Funda Wang <fwang@mandriva.org>
+    - rebuild for epiphany 2.25
+
+* Sun Jan 04 2009 Jérôme Soyer <saispo@mandriva.org> 0.0.4-1mdv2009.1
++ Revision: 324716
+- New upstream release
+
+* Tue Sep 23 2008 Funda Wang <fwang@mandriva.org> 0.0.2-4mdv2009.0
++ Revision: 287171
+- recognize epiphany 2.24
+- rebuild with new epiphany
+
+* Sun Sep 21 2008 Funda Wang <fwang@mandriva.org> 0.0.2-2mdv2009.0
++ Revision: 286278
+- fix typo
+
+* Tue Sep 09 2008 Funda Wang <fwang@mandriva.org> 0.0.2-1mdv2009.0
++ Revision: 282894
+- singled out epiphany extension
+- add package scripts
+- import gget
+
+
