@@ -12,7 +12,7 @@ Group:		Networking/File transfer
 Source0: 	http://ftp.gnome.org/pub/GNOME/sources/%name/0.0/%name-%version.tar.bz2
 Patch0:		gget-0.0.4-epiphany-2.28.patch
 Patch1:		gget-0.0.4-pythonver.patch
-URL:		http://live.gnome.org/GGet
+URL:		https://live.gnome.org/GGet
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 BuildRequires:	python-devel
 BuildRequires:	gnome-python-extras
